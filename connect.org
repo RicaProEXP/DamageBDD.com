@@ -1,0 +1,69 @@
+#+TITLE: Connect - DamageBDD
+
+#+INCLUDE: "header.org"
+* Connect to DamageBDD's Public Bitcoin Lightning Node
+
+** Introduction
+
+Welcome to DamageBDD's public Bitcoin Lightning node! At DamageBDD, we are proud to be a Bitcoin-first company, committed to leveraging the power of Bitcoin and its Lightning Network to foster a vibrant community. Our public Lightning node is designed to facilitate quick and efficient payments for work done on behalf of DamageBDD, allowing us to contract global talent and promote our services effectively.
+
+#+BEGIN_EXPORT html
+<div id="lnd_channel_qr" >
+<b>Quick Connect via QrCode</b>
+
+<img id="lnd_channel_qr" src="/assets/img/lnd_channel_qr.png" alt="Lightning Channel Open" >
+</div>
+#+END_EXPORT
+
+** Why Connect to DamageBDD's Lightning Node?
+
+Connecting to our Lightning node provides several benefits:
+
+- **Fast Transactions**: The Lightning Network allows for near-instantaneous payments, reducing waiting times compared to traditional Bitcoin transactions.
+- **Lower Fees**: Enjoy reduced transaction fees, making it more cost-effective to send and receive payments.
+- **Support the Community**: By connecting to our node, you contribute to the growth and stability of the DamageBDD network, helping us support our community of contractors and service providers.
+
+** Instructions to Connect
+
+Connecting to DamageBDD's public Bitcoin Lightning node is straightforward.
+
+
+Follow these generic instructions to get started:
+
+
+
+1. **Choose a Lightning Wallet**:
+
+    Select a compatible Bitcoin Lightning wallet.
+   
+   - [[https://zeusln.com/][Zeus]]
+
+2. **Obtain Node Information**:
+
+    Use the following details to connect to our node:
+    
+   - **Node Alias**: DamageBDD
+   - **Node Public Key**: 03a7667cf5832af24a43c4ee9b5b82d732db120af57b357c44ae0d41473e6f2d05
+   - **Node Host**: damagebdd.com
+   - **Node Port**: 9735
+
+3. **Connect to the Node**:
+   
+   This may vary depending on the wallet.
+   
+   - Open your Lightning wallet.
+   - Navigate to the section for connecting to a node.
+   - Enter the Node Alias, Public Key, and Address.
+   - Save or confirm the connection.
+
+4. **Start Transacting**:
+   
+   Once connected, you can send and receive payments quickly and efficiently through our Lightning node.
+
+** Conclusion
+
+By connecting to DamageBDD's public Bitcoin Lightning node, you join a forward-thinking community dedicated to harnessing the benefits of Bitcoin. We are excited to empower our global talent network and facilitate seamless transactions.
+
+For further information or support, feel free to reach out to us at [[mailto:contact@damagebdd.com][contact@damagebdd.com]].
+
+Thank you for being a part of the DamageBDD community!

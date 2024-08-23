@@ -11,7 +11,7 @@ Use the following form to create an account:
 
 
 #+BEGIN_EXPORT html
-<form id="kycForm" action="/accounts/create" method="post">
+<form id="signupform" actimn="/accounts/create" method="post">
   <input type="hidden" name="csrf_token" value="your_csrf_token_here">
   
   <label for="full_name">Full Name:</label>

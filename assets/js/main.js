@@ -53,18 +53,8 @@
 					});
 			});
 		}
-		var menuItems = document.querySelectorAll("#mainmenu li");
-
-		menuItems.forEach(function(item) {
-			var link = item.querySelector("a");
-			console.log("loc " , link.getAttribute("href")); 
-			console.log("path " , window.location.pathname); 
-			if (link.getAttribute("href") === window.location.pathname) {
-				item.classList.add("active"); // Add the "active" class if the href matches the current URL path
-			}
-		});
-		hljs.highlightAll();
-		VANTA.GLOBE({
+		const theme = window.localStorage && window.localStorage.getItem("theme");
+		var globe = VANTA.GLOBE({
 			el: "#preamble",
 			mouseControls: true,
 			touchControls: true,
@@ -78,16 +68,59 @@
 			color2: 0x2d6e45,
 			backgroundColor: 0xffffff
 		})
-		codeInput.registerTemplate(
-			"syntax-highlighted",
-			codeInput.templates.hljs(
-				hljs,
-				[
-					new codeInput.plugins.Autodetect(),
-					new codeInput.plugins.Indent(true, 2) // 2 spaces indentation
-				]
-			)
-		);
+		hljs.highlightAll();
+
+		const checkbox = document.getElementById("checkbox")
+		function changeTheme(theme) {
+			try{ document.querySelector('link[href*="/assets/css/highlightjs/"]').remove();
+			   }catch(e){
+				  
+			   };
+			const link = document.createElement("link");
+			link.rel = "stylesheet";
+			link.href = `/assets/css/highlightjs/${theme}.min.css`;
+			document.querySelector("head").append(link);
+		}
+		function setTheme(newtheme){
+			if(newtheme === undefined){
+				newtheme  = document.body.classList.contains("dark") ? "dark" : "light";
+			}
+			
+			window.localStorage && window.localStorage.setItem("theme", newtheme);
+			if (newtheme === "dark") {
+				checkbox.checked = true;
+				globe.setOptions({backgroundColor: 0x292c35});
+			} else {
+				checkbox.checked = false;
+				globe.setOptions({backgroundColor: 0xffffff});
+			}
+			document.body.classList.add(newtheme);
+			globe.restart();
+			// Select all elements with class test 
+			let temp = document.querySelectorAll(".snippet");
+			// Apply CSS property to it
+			for (let i = 0; i < temp.length; i++) {
+				if (newtheme === "dark") {
+					temp[i].style.color = "white";
+					temp[i].style.backgroundColor = "black";
+					temp[i].style.border = "black";
+					temp[i].style.borderLeft = "3px solid #55aa00";
+					changeTheme("sunburst");
+				} else {
+					changeTheme("default");
+					temp[i].style.color = "black";
+					temp[i].style.backgroundColor = "#f3f3f3";
+					temp[i].style.border = "#ddd";
+					temp[i].style.borderLeft = "3px solid #55aa00";
+				}
+			}
+		}
+		setTheme(theme);
+		checkbox.addEventListener("change", () => {
+			document.body.classList.toggle("dark");
+			setTheme();
+
+		})
 
 	});
 

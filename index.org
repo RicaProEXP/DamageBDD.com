@@ -59,8 +59,7 @@ When this is published to the DamageBDD service, DamageBDD runners
 will execute the test case at the scale configured for the run.
 
 #+BEGIN_EXPORT html
-<pre>
-<code class="language-gherkin">
+<pre class='snippet'><code class="language-gherkin">
 Feature: Test echo json functionality of JsonTest.com using HTTP API
 
   Scenario: GET request to JsonTest.com
@@ -100,7 +99,7 @@ Currently DamageBDD is in early stage of development, most of the features liste
 | "Super Step" user defined high level abstractions.                                                           | analysis |
 | Zero Knowledge Proof based contracts to validate tests and approve payouts.                                  | analysis |
 | DamageBDD DeFi market making for test writers and stakeholders.                                              | analysis |
-| [[./whitepaper.html][Damage Tokens]] to power collaborative testing at scale ensuring continuous resilience.                        | analysis |
+| [[./whitepaper.html][Damage Tokens]] to power collaborative testing at scale ensuring continuous resilience.                        | done |
   
 * Target User Roles  
 
@@ -132,7 +131,7 @@ covered using BDD workflow on DamageBDD.
 - [[https://medium.com/coinmonks/design-of-smart-contracts-using-bdd-and-cucumber-4533162fc235][Design of Smart contracts using BDD and Cucumber]]
 - [[https://youtu.be/T70txXsSxig][Better Smart Contracts with Behaviour-Driven Development]]
 - [[./whitepaper.html][Damage Token Whitepaper]]
-- [[https://github.com/jagguli/DamageBDD][DamageBDD Repo]]
+- [[https://github.com/DamageBDD/DamageBDD][DamageBDD Repo]]
 - [[https://www.linkedin.com/company/damagebdd/][DamageBDD Linkedin Page]]
 
   

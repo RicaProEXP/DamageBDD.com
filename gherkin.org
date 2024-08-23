@@ -1,0 +1,36 @@
+ * Gherkin Reference
+
+ * JSONPath Implementation
+
+   DamageBDD's uses the [[https://github.com/ostrovok-tech/ejsonpath][eJsonPath]] implementation to handle jsonpath .
+ 
+
+   
+Since there is no such thing as JSONPath specification, every implementer create it's own variations. But I try to follow description from JSONPath as close as possible.
+
+
++-----------------------+------------------------+-----------+
+| Feature               | Example                |Implemented|
++-----------------------+------------------------+-----------+
+|Dot filtering          |`$.one.two`             | Y         |
++-----------------------+------------------------+-----------+
+|Brace filtering        |`$['one']['two']`       | Y         |
++-----------------------+------------------------+-----------+
+|Array slicing          | `$[1,2,3]` `$.o[2]`    | Y         |
++-----------------------+------------------------+-----------+
+|Hash slicing           | `$['one', 'two']`      | Y         |
++-----------------------+------------------------+-----------+
+|Asterisk (hash, array) | `$.one.*` `$.one[*]`   | Y         |
++-----------------------+------------------------+-----------+
+|Python-slicing         | `$[1:-1:2]`            | Partial*  |
++-----------------------+------------------------+-----------+
+|Eval binary filter     | `$[?(true)]`           | Partial** |
+|                       | `$[?(@.cat != 'mew')]` |           |
++-----------------------+------------------------+-----------+
+|Eval index             | `$[('one')]`           | Partial** |
++-----------------------+------------------------+-----------+
+|Recursive descent      | `..`                   | Y         |
++-----------------------+------------------------+-----------+
+
+[*] Only step=1 supported now
+[**] Limited scripting language: string, integer, binary operators and function calls

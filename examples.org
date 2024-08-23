@@ -1,0 +1,70 @@
+#+Title: Damagebdd - Examples
+#+INCLUDE: "header.org"
+#+HTML_HEAD: <script src="/assets/js/code-input/code-input.min.js"></script>
+#+HTML_HEAD: <script src="/assets/js/code-input/plugins/indent.min.js"></script>
+#+HTML_HEAD: <script src="/assets/js/code-input/plugins/autodetect.min.js"></script>
+#+HTML_HEAD: <script src="/assets/js/code-input/plugins/autocomplete.min.js"></script>
+#+HTML_HEAD: <script src="/assets/js/examples.js"></script>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/code-input.min.css'/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/autocomplete.min.css'/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/examples.css'/>
+* DamageBDD Live Example
+
+
+#+BEGIN_EXPORT html
+<label for="steps">Select and add steps:</label>
+<input type="text" id="steps" list="stepsList">
+<datalist id="stepsList">
+    <select>
+#+END_EXPORT
+#+BEGIN_SRC python :exports results :results value html
+  import yaml
+  from yaml.loader import SafeLoader
+  def render_step(step_data):
+      results = []
+      for group, steps in step_data.items():
+          for step, args in steps.items():
+              stepid = step.replace("{", "_").replace("}","_")
+  
+              results.append(f"<option value=\"{stepid}\">{step}</option>")
+
+      return "<br>".join(results)
+
+  return render_step(yaml.load(open("steps.yaml"), SafeLoader))
+#+END_SRC
+#+BEGIN_EXPORT html
+    </select>
+</datalist>
+<button>Add Step</button>
+#+END_EXPORT
+
+#+BEGIN_EXPORT html
+<code-input language="gherkin">
+Feature: Http test feature
+  Scenario: Test post json
+    Given I am using server "http://localhost:8080"
+    And I set "Content-Type" header to "application/json"
+    When I make a POST request to "/tests/"
+    """
+    {
+        "refund_address": "mohjSavDdQYHRYXcS3uS6ttaHP8amyvX78",
+        "customer_type": "Individual",
+        "full_name": "John Doe",
+        "date_of_birth": "1980-01-01",
+        "address": "123 Main Street, Sydney, NSW",
+        "identification_verification": {
+            "document_type": "Passport",
+            "document_number": "A1234567"
+        },
+        "email": "john.doe@damagebdd.com",
+        "phone": "0412345678"
+    }
+    """
+    Then the response status must be "201"
+    Then the json at path "$.email" must be "john.doe@damagebdd.com"
+
+</code-input>
+<button>Execute</button>
+#+END_EXPORT
+
+

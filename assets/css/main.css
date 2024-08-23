@@ -12,6 +12,7 @@
 
 .header ul {
     list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
@@ -89,48 +90,25 @@ th:last-child, td:last-child {
     border-right: none; /* Remove border for the last column */
 }
 
-form {
+#signupform {
      border: 1px solid #ccc;
      padding: 15px;
      margin: 10px 0;
 }
-label {
+#signupform > label {
   display: block;
   margin-bottom: 10px;
 }
-input, textarea, button {
+#signupform > input ,#signupform > textarea, #signupform > button{
   width: 100%;
   padding: 8px;
   box-sizing: border-box; /* Make sure padding doesn't affect the width */
   margin-bottom: 15px;
 }
-button {
+#signupform button {
   width: auto;
 }
 
-#mainmenu {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-#mainmenu li {
-  margin-right: 20px;
-}
-
-#mainmenu li a {
-  text-decoration: none;
-  color: black;
-}
-
-#mainmenu .active {
-  /* Apply your desired styling for the active menu item */
-  font-weight: bold;
-  color: red;
-}
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -194,7 +172,7 @@ a{
 a:hover {
   text-decoration: underline;
 }
-/*pre {
+pre.snippet {
     background: #f4f4f4;
     border: 1px solid #ddd;
     border-left: 3px solid #55aa00;
@@ -209,4 +187,95 @@ a:hover {
     padding: 0.4em 1.5em;
     display: block;
     word-wrap: break-word;
-}*/
+}
+pre.snippet-dark {
+    background: #000000;
+    border: 1px solid #000000;
+    border-left: 3px solid #55aa00;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 0.4em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
+/*  
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {box-sizing: border-box;}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.2s linear;
+}
+
+*/
+/* https://codepen.io/Umer_Farooq/pen/eYJgKGN */
+body.dark {background-color: #292c35;} /* #9b59b6 */
+
+body.dark h1, body.dark a, body.dark p, body.dark h2 , body.dark ul{
+    color: #2d6e45;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+    top: 10px;
+  background-color: #111;
+  width: 50px;
+  border-radius: 50px;
+  height: 26px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+.fas{margin: 3px;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+div#lnd_channel_qr{
+    float: right;
+    border: 1px dotted;
+    padding: 1em;
+}
+#lnd_channel_qr>b, #lnd_channel_qr>img{
+    display:block;
+     margin-left: auto;
+  margin-right: auto;
+}
+    

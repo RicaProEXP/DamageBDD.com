@@ -10,10 +10,12 @@
 #+HTML_HEAD: <script src='/assets/js/highlight.min.js'></script>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/humanoid-light.css'>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/main.css'/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/nav.css'/>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/toast.css'/>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/fontawesome.min.css'/>
 #+HTML_HEAD: <script>hljs.highlightAll();</script>
 #+HTML_HEAD: <script src="https://kit.fontawesome.com/cf1d913439.js" crossorigin="anonymous"></script>
+#+HTML_HEAD: <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
 #+BEGIN_EXPORT html
 <div class="header" >
 <!--
@@ -21,16 +23,34 @@
   <h1>DamageBDD</h1>
   </a>
   <br>
-  -->
   <div id='mainmenudiv'>
   <ul id="mainmenu" >
         <li ><a href="/">Home</a></li>
         <li ><a href="/manual">Get Started!</a></li>
         <li ><a href="/pricing">Pricing</a></li>
         <li ><a href="/articles">Articles</a></li>
-        <!--<li ><a href="/accounts.html">Accounts</a></li>-->
         <li ><a href="/about">About</a></li>
   </ul>
+    </div>
+  <br>
+  -->
+  <div class="nav-container">
+            <!--<span class="logo">DamageBDD</span>-->
+            <nav class="nav">
+                <ul class="nav--ul__one">
+                    <li class="nav-link"><a href="/">Home</a></li>
+                    <li class="nav-link"><a href="/manual">Start</a></li>
+                    <li class="nav-link"><a href="/articles">Discover</a></li>
+                    <li class="nav-link"><a href="/about">About</a></li>
+                </ul>
+                <ul class="nav--ul__two">
+                    <li class="nav-link"><a href="#">Login</a></li>
+                    <li class="nav-link"><a href="#">Signup</a></li>
+                </ul>
+            </nav>
+            <span class="hamburger-menu  material-symbols-outlined">menu</span>
+        </div>
+                <span class="hamburger-menu  material-symbols-outlined">menu</span>
         <div>
             <input type="checkbox" class="checkbox" id="checkbox">
             <label for="checkbox" class="checkbox-label">
@@ -39,7 +59,5 @@
                 <span class="ball"></span>
             </label>
         </div>
-    </div>
-  <br>
 </div>
 #+END_EXPORT
