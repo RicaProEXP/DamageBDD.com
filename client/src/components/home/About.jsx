@@ -44,19 +44,14 @@ const About = () => {
                   <span>About DamageBDD</span>
                 </h6>
                 <h3 className="headingwow" data-splitting="">
-                  Excellence in Damage Prevention Solutions
+					Building the Future of Software with Precision, Integrity, and Innovation
                 </h3>
                 <p className="mb-17">
-                  DamageBDD is a leader in providing innovative solutions for
-                  damage prevention, ensuring safety, and enhancing project
-                  efficiency across industries.
+                  At DamageBDD, we believe in transforming the way software is built, tested, and delivered. As a Bitcoin-first, blockchain-powered platform, we specialize in Behavior-Driven Development (BDD) to ensure the highest standards of quality, resilience, and integrity in software systems.
+					By combining cutting-edge verification tools with a robust tokenized ecosystem, DamageBDD empowers high-performance development teams and engineering leaders to create reliable software while unlocking new opportunities for collaboration and innovation.
                 </p>
                 <p className="mb-26">
-                  Our team is dedicated to delivering top-tier services and
-                  products tailored to meet the needs of our clients. We employ
-                  advanced technology and best practices to ensure optimal
-                  outcomes, reducing risks and fostering sustainable growth for
-                  businesses.
+					Our mission is simple: to incentivize excellence and deliver verifiable results that drive progress. Join us in shaping the future of software development with transparency, accountability, and unmatched precision.
                 </p>
                 <a href="about.html" className="action-btn">
                   <span>Learn More About Us</span>
