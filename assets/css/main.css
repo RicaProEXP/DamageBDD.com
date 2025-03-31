@@ -242,10 +242,11 @@ body.dark h1, body.dark a, body.dark p, body.dark h2 , body.dark ul{
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(24px);
 }
-#logo{
-    float:left;
-    padding-right:3em;
-    height:10em;
-
+#logo {
+    float: left;
+    padding-right: 3em;
+    height: 425px;
+    position: relative;
+    top: -50px;
 }
 
