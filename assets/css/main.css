@@ -244,8 +244,8 @@ body.dark h1, body.dark a, body.dark p, body.dark h2 , body.dark ul{
 }
 #logo {
     float: left;
-    padding-right: 3em;
-    height: 425px;
+    padding-right: 2em;
+    height: 550px;
     position: relative;
     top: -50px;
 }
